@@ -1,0 +1,12 @@
+{% extends 'scraper/base.html' %}
+
+{% block content %}
+  <h1>Scraped links:</h1>
+  <ul>
+    {% for link in links %}
+      {% with link_href=link.get('href') %}
+        <li><a href="{{ link_href }}">{{ link.text }}</a></li>
+      {% endwith %}
+    {% endfor %}
+  </ul>
+{% endblock content %}
